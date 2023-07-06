@@ -1,11 +1,11 @@
-from ekstrak import EkstrakPages
-from load import CreateDataframe
+from btn.ekstrak import EkstrakPages
+from btn.load import CreateDataframe
 import pandas as pd
 import os
 from time import sleep
 import requests
 from bs4 import BeautifulSoup
-from ekstrak import EkstrakFeature
+from btn.ekstrak import EkstrakFeature
 
 firt_running_program = True
 # Data berisi dafftar Provinsi dan kabupaten kotanya
@@ -13,8 +13,8 @@ df = pd.read_csv("Kode_wilayah.csv")
 subcity = pd.read_csv('id_wilayah.csv')
 
 # Menentukan lokasi penyimpanan hasil scrapping
-path_indo = os.path.join('D:/FAYYYAD/PROGRES MAGANG/btn/test', 'Indonesia')
-path_prov = os.path.join('D:/FAYYYAD/PROGRES MAGANG/btn/test', 'Prov')
+path_indo = os.path.join('btn', 'Indonesia')
+path_prov = os.path.join('btn', 'Prov')
 path_ket = os.path.join(path_indo, 'KET')
 header = {
     'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.54'
@@ -32,7 +32,7 @@ except:
 
 # Load Checkpoint
 try:
-    checkpoint = pd.read_csv("D:/FAYYYAD/PROGRES MAGANG/btn/test/Indonesia/KET/CHECKPOINT.csv")
+    checkpoint = pd.read_csv("btn/Indonesia/KET/CHECKPOINT.csv")
 except:
     skip = ''
 

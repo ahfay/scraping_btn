@@ -9,8 +9,8 @@ from btn.ekstrak import EkstrakFeature
 
 firt_running_program = True
 # Data berisi dafftar Provinsi dan kabupaten kotanya
-df = pd.read_csv("Kode_wilayah.csv")
-subcity = pd.read_csv('id_wilayah.csv')
+df = pd.read_csv("btn/Kode_wilayah.csv")
+subcity = pd.read_csv('btn/id_wilayah.csv')
 
 # Menentukan lokasi penyimpanan hasil scrapping
 path_indo = os.path.join('btn', 'Indonesia')
